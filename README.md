@@ -1,17 +1,30 @@
-# RAG
+# Retrieval-Augmented Generation (RAG)
 
-RAG experiments and tutorials.
+A collection of RAG implementations, tutorials, and applications.
 
-- **[`RAG-Tutorials-main/pageindex_app`](RAG-Tutorials-main/pageindex_app)**: 📑 a Streamlit app for document Q&A. You upload PDFs and ask questions. It uses PageIndex (vectorless, tree-based RAG) with Groq LLMs.
-- **[`PageIndex_Vectorless_RAG_CrashCourse (1).ipynb`](<RAG-Tutorials-main/PageIndex_Vectorless_RAG_CrashCourse (1).ipynb>)**: a notebook walkthrough of the same pipeline, using the ISO/IEC 27001 standard as the example document.
-- The other notebooks and `src/` cover classic vector RAG (FAISS, Chroma, Typesense), RAG evaluation, and agentic RAG.
+## 📑 PageIndex Vectorless Document Q&A (Streamlit)
+Located in [`pageindex_app/`](pageindex_app):
+- Uses **PageIndex** for tree-based indexing (no chunking, no vector DB).
+- Uses **Groq** (`openai/gpt-oss-120b`) for reasoning over the document structure and answering with exact section citations.
+- Includes PageIndex hosted Chat API fallback and support for multi-document Q&A.
 
-## Setup
+### Running Locally
 ```powershell
-cp RAG-Tutorials-main/.env.example RAG-Tutorials-main/.env   # then fill in your keys
-pip install -r RAG-Tutorials-main/pageindex_app/requirements.txt
-streamlit run RAG-Tutorials-main/pageindex_app/app.py
+pip install -r pageindex_app/requirements.txt
+streamlit run pageindex_app/app.py
 ```
 
-`.env` is git-ignored, so keys are never committed.
+### Deploying to Streamlit Cloud
+- **Repository:** `Vdj-Gov/Retrieval-Augmented-Generation`
+- **Branch:** `main`
+- **Main file path:** `pageindex_app/app.py`
+- Add `PAGEINDEX_API_KEY` and `GROQ_API_KEY` in **App Settings → Secrets**.
 
+---
+
+## 📓 Notebooks & Tutorials
+- **`PageIndex_Vectorless_RAG_CrashCourse (1).ipynb`**: End-to-end vectorless RAG crash course with ISO 27001 standard.
+- **`agenticrag/`**: Agentic RAG notebooks.
+- **`1-rag_evaluation.ipynb`**: RAG evaluation pipeline.
+- **`typesense.ipynb`**: Vector search with Typesense.
+- **`src/`**: Classical vector store implementations (FAISS, Chroma).
