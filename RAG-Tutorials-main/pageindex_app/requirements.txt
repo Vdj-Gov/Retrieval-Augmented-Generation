@@ -1,0 +1,5 @@
+streamlit>=1.40
+pageindex>=0.5
+openai>=1.40
+python-dotenv
+

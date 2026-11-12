@@ -1,0 +1,22 @@
+# ── Secrets — never commit ─────────────────────────
+.env
+.env.*
+!.env.example
+**/.streamlit/secrets.toml
+
+# ── Documents (copyrighted / private PDFs, local index state) ──
+*.pdf
+**/uploads/
+**/documents.json
+**/pageindex_local/
+
+# ── Python / tooling ───────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+faiss_store/
+.DS_Store
+Thumbs.db
+
