@@ -6,7 +6,7 @@ Hands-on RAG implementations in Python, from classical vector search to vectorle
 
 
 
-**Live demo:** [Open the app](https://vdj-gov-rag-rag-tutorials-mainpageindex-appapp-p11fkl.streamlit.app/) 
+
 ---
 
 ## Contents
